@@ -3573,6 +3573,10 @@ function setMasterBrand(brand) {
   document.querySelectorAll('.master-brand-tab').forEach(b =>
     b.classList.toggle('active', b.dataset.brand === brand));
 
+  // 11) 易利氣磁力｜momo × 蝦皮 × 大法 通路拆解：只有易利氣磁力才顯示，若元益生菌不顯示
+  const pipDestPanel = document.getElementById('pipDestPanel');
+  if (pipDestPanel) pipDestPanel.style.display = (brand === '易利氣磁力') ? '' : 'none';
+
   renderAll();
 }
 
